@@ -13,13 +13,23 @@ The milestones for this project are listed below:
 
 2-	including [http.h](https://github.com/yhirose/cpp-httplib) library and [json.h](https://github.com/nlohmann/json) library in this         project. This will be completed 3/13/2019.
 
-3-	Get weather related data from an online source. This will be completed 3/17/2019.
+3-	Get weather related data from an online source. This will be completed 3/19/2019.
 
-4-	Develop a process that creates visual response based on weather data. This will be completed 3/17/2019.
+4-	Develop a process that creates visual response based on weather data. This will be completed 3/20/2019.
 
 5-	Completing API documentation for the project. This will be completed 3/21/2019.
    
+To Date Accomplishments
+===
 
+Docker, doxygen, google test, Visual Studio Code, and Elam are all working on raspberry pi. This required a number of library installed including http and json.
+The milestones have not changed yet as there is five days remaining to the due sate of the projsct.
+
+Working Aspects of the project       
+===
+
+Currently the Elma project can be made with the docker installed on the pi. Elma can also be made by calling the make file in the terminal.
+Next step is to get weather data from an online sorce which should be simpler after completing homework 9.   
 
 Installation
 ---
