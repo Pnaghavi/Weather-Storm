@@ -23,7 +23,7 @@ To Date Accomplishments
 ===
 
 Docker, doxygen, google test, Visual Studio Code, and Elam are all working on raspberry pi. This required a number of library installed including http and json.
-The milestones have not changed yet as there is five days remaining to the due sate of the projsct.
+The milestones have not changed yet as there is five days remaining to the due date of the project.
 
 Working Aspects of the project       
 ===
