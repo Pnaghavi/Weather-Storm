@@ -25,7 +25,7 @@ To Date Accomplishments
 Docker, doxygen, google test, Visual Studio Code, and Elam are all working on raspberry pi. This required a number of library installed including http and json.
 The milestones have not changed yet as there is five days remaining to the due date of the project.
 
-Working Aspects of the project       
+Working Aspects of the Project       
 ---
 
 Currently the Elma project can be made with the docker installed on the pi. Elma can also be made by calling the make file in the terminal.
