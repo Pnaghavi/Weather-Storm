@@ -5,7 +5,7 @@ The Elma Weather Storm uses the [Elam](https://github.com/klavinslab/elma) libra
 The source code for this project is available [on github](https://github.com/Pnaghavi/Weather-Storm).
 
 Milestones 
-===
+---
 
 The milestones for this project are listed below:
 
@@ -20,13 +20,13 @@ The milestones for this project are listed below:
 5-	Completing API documentation for the project. This will be completed 3/21/2019.
    
 To Date Accomplishments
-===
+---
 
 Docker, doxygen, google test, Visual Studio Code, and Elam are all working on raspberry pi. This required a number of library installed including http and json.
 The milestones have not changed yet as there is five days remaining to the due date of the project.
 
 Working Aspects of the project       
-===
+---
 
 Currently the Elma project can be made with the docker installed on the pi. Elma can also be made by calling the make file in the terminal.
 Next step is to get weather data from an online sorce which should be simpler after completing homework 9.   
