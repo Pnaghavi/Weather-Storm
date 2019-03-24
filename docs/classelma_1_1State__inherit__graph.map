@@ -1,0 +1,6 @@
+<map id="elma::State" name="elma::State">
+<area shape="rect" id="node2" href="$classdeenergizeState.html" title="This class is inherited from the State class of Elma that represents the deenergize state of the weat..." alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node3" href="$classenergizeState.html" title="This class is inherited from the State class of Elma that represents the energize state of the weathe..." alt="" coords="157,80,269,107"/>
+<area shape="rect" id="node4" href="$classgetDataState.html" title="This class is inherited from the State class of Elma that represents the get data state of the weathe..." alt="" coords="293,80,403,107"/>
+<area shape="rect" id="node5" href="$classidleState.html" title="This class is inherited from the State class of Elma that represents the idle state of the weatherSto..." alt="" coords="427,80,506,107"/>
+</map>

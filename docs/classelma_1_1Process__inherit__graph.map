@@ -1,0 +1,5 @@
+<map id="elma::Process" name="elma::Process">
+<area shape="rect" id="node2" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="31,80,181,107"/>
+<area shape="rect" id="node4" href="$classweatherStormGenerator.html" title="This class is inherited from the Process class of Elma. " alt="" coords="206,80,385,107"/>
+<area shape="rect" id="node3" href="$classweatherStormStateMachine.html" title="This class is inherited from the StateMachine class of Elma. " alt="" coords="5,155,207,181"/>
+</map>

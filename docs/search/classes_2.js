@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['userinterface',['UserInterface',['../classstopwatch_1_1UserInterface.html',1,'stopwatch']]]
+  ['energizestate',['energizeState',['../classenergizeState.html',1,'']]],
+  ['event',['Event',['../classelma_1_1Event.html',1,'elma']]],
+  ['exception',['Exception',['../classelma_1_1Exception.html',1,'elma']]]
 ];

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classelma_1_1State.html" title="States for the StateMachine class. " alt="" coords="5,81,103,108"/>
+<area shape="rect" id="node2" href="$classdeenergizeState.html" title="This class is inherited from the State class of Elma that represents the deenergize state of the weat..." alt="" coords="151,5,279,32"/>
+<area shape="rect" id="node3" href="$classenergizeState.html" title="This class is inherited from the State class of Elma that represents the energize state of the weathe..." alt="" coords="159,56,271,83"/>
+<area shape="rect" id="node4" href="$classgetDataState.html" title="This class is inherited from the State class of Elma that represents the get data state of the weathe..." alt="" coords="160,107,269,133"/>
+<area shape="rect" id="node5" href="$classidleState.html" title="This class is inherited from the State class of Elma that represents the idle state of the weatherSto..." alt="" coords="175,157,254,184"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="weatherStormStateMachine" name="weatherStormStateMachine">
+<area shape="rect" id="node2" href="$classelma_1_1StateMachine.html" title="A finite state machine class. " alt="" coords="31,80,181,107"/>
+<area shape="rect" id="node3" href="$classelma_1_1Process.html" title="An abstract base class for processes. " alt="" coords="50,5,162,32"/>
+</map>
