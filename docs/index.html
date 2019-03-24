@@ -63,7 +63,7 @@ $(function() {
 <div class="title">Weather-Storm </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The Weather-Storm uses the <a href="https://github.com/klavinslab/elma">Elam</a> library as its infrastructure to implement an event loop process manager for raspberry pi to read weather data from an online server and use that to create visual indications, such as blinking LEDs and turning a stepper motor. In addition, I am using the <a href="https://github.com/yhirose/cpp-httplib">http.h</a>, <a href="https://github.com/nlohmann/json">json.h</a>, <a href="https://www.airspayce.com/mikem/bcm2835">bcm2835</a>, <a href="http://wiringpi.com/">WiringPi</a> for this project. In this project I am getting weather data of Seattle, WA from an online server <a href="https://api.openweathermap.org/">openweathermap</a> and using the current maximum temperature of Seattle, I am turning this information into visual responses using the raspberry pi. These visual responses are 8 LEDs that brighten while the stepper motor is rotatig as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a raspberry pi for this project. The source code for this project is available <a href="https://github.com/Pnaghavi/Weather-Storm">on github</a>.</p>
+<div class="textblock"><p>The Weather-Storm uses the <a href="https://github.com/klavinslab/elma">Elam</a> library as its infrastructure to implement an event loop process manager for Raspberry Pi to read weather data from an online server and use that to create visual indications, such as blinking LEDs and turning a stepper motor. In addition, I am using the <a href="https://github.com/yhirose/cpp-httplib">http.h</a>, <a href="https://github.com/nlohmann/json">json.h</a>, <a href="https://www.airspayce.com/mikem/bcm2835">bcm2835</a>, <a href="http://wiringpi.com/">WiringPi</a> for this project. In this project I am getting weather data of Seattle, WA from an online server <a href="https://api.openweathermap.org/">openweathermap</a> and using the current maximum temperature of Seattle, I am turning this information into visual responses using the Raspberry Pi. These visual responses are 8 LEDs that brighten while the stepper motor is rotating as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a Raspberry Pi for this project. The source code for this project is available <a href="https://github.com/Pnaghavi/Weather-Storm">on github</a>.</p>
 <h2>Installation on Unix systems (e.g. Raspbian) </h2>
 <p>First install required packages available through apt-get </p><pre class="fragment">sudo apt-get update
 sudo apt-get install -y cmake
@@ -88,7 +88,8 @@ sudo mv json.hpp json.h
 git clone https://github.com/klavins/cpp-httplib.git
 sudo mkdir /usr/local/include/httplib
 sudo mv /tmp/cpp-httplib/httplib.h /usr/local/include/httplib
-</pre><p>Next, install bcm2835 Note: The commands bellow should be run as root Use this <a href="https://www.airspayce.com/mikem/bcm2835/">link</a> to download the latest bcm2835 library </p><pre class="fragment">tar zxvf bcm2835-1.xx.tar.gz
+</pre><p>Next, install bcm2835 Note: The commands bellow should be run as root Use this <a href="https://www.airspayce.com/mikem/bcm2835/">link</a> to download the latest bcm2835 library </p><pre class="fragment">cd ~
+tar zxvf bcm2835-1.xx.tar.gz
 cd bcm2835-1.xx
 ./configure
 make
@@ -103,12 +104,12 @@ make
 </pre><h2>Execution </h2>
 <p>To run the Weather-Storm, type </p><pre class="fragment">./projectSrc/bin/storm
 </pre><h2>Architecture </h2>
-<p>Below you can see the electrical setup of my project. All the items are labeled.</p>
+<p>Below, you can see the electrical setup of my project. All the items are labeled.</p>
 <div class="image">
 <img src="pics/setUP.jpg" alt="Electrical Setup"/>
 </div>
 <p>In the current setup the LEDs are controlled directly by the PI, but the stepper drive DRV8711 is not 100% controlled by the PI. There is a TI Launchpad board under the drive that listens to the PI's pulse train and passes it on to the STEP input of the drive but the drive requiers SPI com so that the drive registers are setup correctly. On powerup LaunchPad sets all the drive registers. The drive cannot work without the registers bing set. Raspberry Pi boards are able to run SPI com but after many hours I was not able to make that work</p>
-<p>Below you can see the class hierarchy of the the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma. Finally another class inheriting from the the abstarct Process class of Elma</p>
+<p>Below, you can see the class hierarchy of the the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma. Finally another class inheriting from the the abstarct Process class of Elma</p>
 <div class="image">
 <img src="pics/classH.jpg" alt="Electrical Setup"/>
 </div>
@@ -122,7 +123,6 @@ make
 <p>There is a <a href="https://github.com/Pnaghavi/Weather-Storm/blob/master/IMG_2348.mp4">video</a> on this repository showing the actual devices running the code.</p>
 <p>The example below shows typical output on the terminal when the code is running: </p><pre class="fragment">Received data from server:
 
-```json
 {
     "base": "stations",
     "clouds": {
@@ -165,7 +165,6 @@ make
         "speed": 1.66
     }
 }
-```
 Seattle's max temperature in Kelvins: 287
 Weather Storm State Machine started.
 Weather Storm State Machine received data.
@@ -197,7 +196,7 @@ Weather Storm State Machine is idle.
 <p><a href="https://www.weather.gov/documenttation/services-web-api#/default/get stations%20 stationld%20 observations latest">www.weather.gov</a> - NOAA's API Web Service, the runner up to the API used for this project.</p>
 <p>LIBRARIES:</p>
 <p>Elma - Github</p>
-<p><a href="https://github.com/klavinslab/elma">Elam</a> - eLma library as its infrastructure to implement an event loop process manager</p>
+<p><a href="https://github.com/klavinslab/elma">Elam</a> - Elma library as its infrastructure to implement an event loop process manager</p>
 <p>clinkt - Github:</p>
 <p><a href="https://github.com/DianaProbst/clinkt">github.com/DianaProbst/clinkt</a> - DianaProbst's clinkt repository provided a C++ ported version of the Python Library blinkt for the Pimoroni Blinkt LED display (and related APA102 pixel strips) on the Raspberry Pi. This library was instrumental for getting LED functionality on the Raspberry Pi using C++.</p>
 <p>http - github:</p>
@@ -215,7 +214,7 @@ Weather Storm State Machine is idle.
 <!-- start footer part -->
   <hr class="footer"/><address class="footer"><small>
   Developed by Pirouz Naghavi</a> for UW ECE 590<br>
-  Generated on Sat Mar 23 2019 21:43:56 for Weather-Storm by &#160;<a href="http://www.doxygen.org/index.html">
+  Generated on Sat Mar 23 2019 22:42:46 for Weather-Storm by &#160;<a href="http://www.doxygen.org/index.html">
   Doxygen
   </a> 1.8.13
   </small></address>
