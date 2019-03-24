@@ -4,8 +4,8 @@ Weather-Storm
 The Weather-Storm uses the [Elam](https://github.com/klavinslab/elma) library as its infrastructure to implement an event loop process manager for Raspberry Pi to read weather 
 data from an online server and use that to create visual indications, such as blinking LEDs and turning a stepper motor. In addition, I am using the [http.h](https://github.com/yhirose/cpp-httplib),
 [json.h](https://github.com/nlohmann/json), [bcm2835](https://www.airspayce.com/mikem/bcm2835), [WiringPi](http://wiringpi.com/) for this project. In this project I am getting weather data of Seattle, WA from an online server
-[openweathermap](https://api.openweathermap.org/) and using the current maximum temperature of Seattle, I am turning this information into visual responses using the raspberry pi. These visual responses are 8 LEDs that brighten while the stepper
-motor is rotatig as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a raspberry pi for this project.
+[openweathermap](https://api.openweathermap.org/) and using the current maximum temperature of Seattle, I am turning this information into visual responses using the Raspberry Pi. These visual responses are 8 LEDs that brighten while the stepper
+motor is rotating as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a Raspberry Pi for this project.
 The source code for this project is available [on github](https://github.com/Pnaghavi/Weather-Storm).
  
 
@@ -51,6 +51,7 @@ Next, install bcm2835
 Note: The commands bellow should be run as root 
 Use this [link](https://www.airspayce.com/mikem/bcm2835/) to download the latest bcm2835 library  
     
+    cd ~
     tar zxvf bcm2835-1.xx.tar.gz
     cd bcm2835-1.xx
     ./configure
@@ -78,7 +79,7 @@ To run the Weather-Storm, type
 Architecture
 ---
 
-Below you can see the electrical setup of my project. All the items are labeled.   
+Below, you can see the electrical setup of my project. All the items are labeled.   
 
 ![Electrical Setup](pics/setUP.jpg)
 
@@ -88,7 +89,7 @@ but the drive requiers SPI com so that the drive registers are setup correctly. 
 drive cannot work without the registers bing set. Raspberry Pi boards are able to run SPI com but after many hours I was not able to make that work
 
 
-Below you can see the class hierarchy of the the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma.
+Below, you can see the class hierarchy of the the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma.
 Finally another class inheriting from the the abstarct Process class of Elma 
      
 ![Electrical Setup](pics/classH.jpg)
@@ -116,7 +117,6 @@ The example below shows typical output on the terminal when the code is running:
 
     Received data from server:
 
-    ```json
     {
         "base": "stations",
         "clouds": {
@@ -159,7 +159,6 @@ The example below shows typical output on the terminal when the code is running:
             "speed": 1.66
         }
     }
-    ```
     Seattle's max temperature in Kelvins: 287
     Weather Storm State Machine started.
     Weather Storm State Machine received data.
