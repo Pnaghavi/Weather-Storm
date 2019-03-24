@@ -1,7 +1,11 @@
 Weather-Storm
 ===
 
-The Weather-Storm uses the [Elam](https://github.com/klavinslab/elma) library as its infrastructure to implement an event loop process manager for raspberry pi to read weather related data from online server and use that to create visual indications, such as blinking LEDs and or turning a stepper motor. In addition, I will be using the [http.h](https://github.com/yhirose/cpp-httplib), [json.h](https://github.com/nlohmann/json), [bcm2835](https://www.airspayce.com/mikem/bcm2835), [WiringPi](http://wiringpi.com/) for this project. In this project I am getting weather related data of Seattle from an online [openweathermap](https://api.openweathermap.org/) and using current maximum temperature of Seattle, I am turning this information into visual responses using the raspberry pi. These visual responses are 8 LEDs that brighten while the stepper motor is rotatig as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a raspberry pi for this project.
+The Weather-Storm uses the [Elam](https://github.com/klavinslab/elma) library as its infrastructure to implement an event loop process manager for raspberry pi to read weather 
+data from an online server and use that to create visual indications, such as blinking LEDs and turning a stepper motor. In addition, I am using the [http.h](https://github.com/yhirose/cpp-httplib),
+[json.h](https://github.com/nlohmann/json), [bcm2835](https://www.airspayce.com/mikem/bcm2835), [WiringPi](http://wiringpi.com/) for this project. In this project I am getting weather data of Seattle, WA from an online server
+[openweathermap](https://api.openweathermap.org/) and using the current maximum temperature of Seattle, I am turning this information into visual responses using the raspberry pi. These visual responses are 8 LEDs that brighten while the stepper
+motor is rotatig as many counts as the current maximum temperature of Seattle in Kelvins and finally, the LEDs dim slowly. I have used a stepper motor, a switching power supply, a TI DRV8711 stepper drive, and a raspberry pi for this project.
 The source code for this project is available [on github](https://github.com/Pnaghavi/Weather-Storm).
  
 
@@ -78,9 +82,9 @@ Below you can see the electrical setup of my project. All the items are labeled.
 
 ![Electrical Setup](pics/setUP.jpg)
 
-In the current setup there the LEDs are controlled directly by the PI, but the stepper drive DRV8711 is not 100% controlled by the PI.
+In the current setup the LEDs are controlled directly by the PI, but the stepper drive DRV8711 is not 100% controlled by the PI.
 There is a TI Launchpad board under the drive that listens to the PI's pulse train and passes it on to the STEP input of the drive
-but the drive requiers SPI com so that the drive registers are setup correctly. On powerup LaunchPad sets all th drive registers. The
+but the drive requiers SPI com so that the drive registers are setup correctly. On powerup LaunchPad sets all the drive registers. The
 drive cannot work without the registers bing set. Raspberry Pi boards are able to run SPI com but after many hours I was not able to make that work
 
 
@@ -90,7 +94,7 @@ Finally another class inheriting from the the abstarct Process class of Elma
 ![Electrical Setup](pics/classH.jpg)
 
 The classes inheriting from State class of Elma are the states of the state machine. The class inheriting from StateMachine in elma constructs the states and adds the transitions of the states.
-The class inheriting from process runs the state machine. Currently the process runs the through each state and once all tasks on that sate is complete, the state machine manager emits the event for the next state.
+The class inheriting from process runs the state machine. Currently the process runs through each state and once all tasks on that state is complete, the state machine manager emits the event for the next state.
 When the process runs for 100 seconds it constantly runs through all the states of the state machine periodically.           
 
 The diagram below shows the opperation of the state machine. The evil project is made by the evil weather master, that has created an evil state machine. The evil state machine has four stetes idle, get dtat,energize, and deenergize.
@@ -100,7 +104,7 @@ brightening the LEDs to maximum brightness. Once that task is complete the state
 
 ![Electrical Setup](pics/stateM.jpg)
 
-This state machine is run by a process that monitors each state until all tasks are complete before emiting the transition to the next state. In addition it will thransfer the json object from the get data state to the energiz and deenergize state.
+This state machine is run by a process that monitors each state until all tasks are complete before emiting the transition to the next state. In addition it will transfer the json object from the get data state to the energiz and deenergize state.
 The main method will run this process for 100 seconds every 7 seconds. The evil state machine will run periodically for 100 seconds until the evil weather master gets bored and moves on to doing somthing worthwile like helping the elderly cross the street.  
 
 Results
