@@ -84,13 +84,13 @@ Below, you can see the electrical setup of my project. All the items are labeled
 ![Electrical Setup](pics/setUP.jpg)
 
 In the current setup the LEDs are controlled directly by the PI, but the stepper drive DRV8711 is not 100% controlled by the PI.
-There is a TI Launchpad board under the drive that listens to the PI's pulse train and passes it on to the STEP input of the drive
-but the drive requiers SPI com so that the drive registers are setup correctly. On powerup LaunchPad sets all the drive registers. The
-drive cannot work without the registers bing set. Raspberry Pi boards are able to run SPI com but after many hours I was not able to make that work
+There is a TI Launchpad board under the drive that listens to the PI's pulse train and passes it on to the STEP input of the drive,
+but the drive requires SPI com so that the drive registers are setup correctly. On powerup LaunchPad sets all the drive registers. The
+drive cannot work without the registers set. Raspberry Pi boards are able to run SPI com but after many hours I was not able to make that work
 
 
-Below, you can see the class hierarchy of the the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma.
-Finally another class inheriting from the the abstarct Process class of Elma 
+Below, you can see the class hierarchy of the software. There are four classes inheriting from the abstract State class of Elma. There is a class inheriting from StateMachine class of Elma.
+Finally, another class inheriting from the abstract Process class of Elma. 
      
 ![Electrical Setup](pics/classH.jpg)
 
@@ -98,15 +98,15 @@ The classes inheriting from State class of Elma are the states of the state mach
 The class inheriting from process runs the state machine. Currently the process runs through each state and once all tasks on that state is complete, the state machine manager emits the event for the next state.
 When the process runs for 100 seconds it constantly runs through all the states of the state machine periodically.           
 
-The diagram below shows the opperation of the state machine. The evil project is made by the evil weather master, that has created an evil state machine. The evil state machine has four stetes idle, get dtat,energize, and deenergize.
-In the idle stat the state machine waites for the start event to transition to the get data state. In the get data state the machine sends a get request to the server https://api.openweathermap.org/ to obtain weather date of Seattle.
-Once that is complete the state machine will transition to the next state. The next state is the energize state, in this state this evil machine will rotate the stepper motor same numbr of counts as the current maximum temperature of Seattle, while
-brightening the LEDs to maximum brightness. Once that task is complete the state machine will trasition to the next state which is deenergize, in this state the LEDs slowly dim until they are off and so this evil machine will deenrgize. Finally,the state machine returns to the idle state.                         
+The diagram below shows the operation of the state machine. The evil project is made by the evil weather master, that has created an evil state machine. The evil state machine has four stets idle, get data, energize, and deenergize.
+In the idle stat the state machine waits for the start event to transition to the get data state. In the get data state the machine sends a get request to the server https://api.openweathermap.org/ to obtain weather date of Seattle.
+Once that is complete the state machine will transition to the next state. The next state is the energize state, in this state this evil machine will rotate the stepper motor same number of counts as the current maximum temperature of Seattle, while
+brightening the LEDs to maximum brightness. Once that task is complete the state machine will transition to the next state which is deenergize, in this state the LEDs slowly dim until they are off and so this evil machine will deenergize. Finally, the state machine returns to the idle state.                         
 
 ![Electrical Setup](pics/stateM.jpg)
 
-This state machine is run by a process that monitors each state until all tasks are complete before emiting the transition to the next state. In addition it will transfer the json object from the get data state to the energiz and deenergize state.
-The main method will run this process for 100 seconds every 7 seconds. The evil state machine will run periodically for 100 seconds until the evil weather master gets bored and moves on to doing somthing worthwile like helping the elderly cross the street.  
+This state machine is run by a process that monitors each state until all tasks are complete before emitting the transition to the next state. In addition, it will transfer the json object from the get data state to the energize and deenergize state.
+The main method will run this process for 100 seconds every 7 seconds. The evil state machine will run periodically for 100 seconds until the evil weather master gets bored and moves on to doing something worthwhile like helping the elderly cross the street.  
 
 Results
 ---
