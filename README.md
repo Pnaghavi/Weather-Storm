@@ -215,7 +215,7 @@ LIBRARIES:
 
 Elma - Github
 
-[Elam](https://github.com/klavinslab/elma) - eLma library as its infrastructure to implement an event loop process manager
+[Elam](https://github.com/klavinslab/elma) - Elma library as its infrastructure to implement an event loop process manager
 
 clinkt - Github:
 
