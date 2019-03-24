@@ -1,7 +1,7 @@
 Weather-Storm
 ===
 
-The Weather-Storm uses the [Elam](https://github.com/klavinslab/elma) library as its infrastructure to implement an event loop process manager for raspberry pi to read weather 
+The Weather-Storm uses the [Elam](https://github.com/klavinslab/elma) library as its infrastructure to implement an event loop process manager for Raspberry Pi to read weather 
 data from an online server and use that to create visual indications, such as blinking LEDs and turning a stepper motor. In addition, I am using the [http.h](https://github.com/yhirose/cpp-httplib),
 [json.h](https://github.com/nlohmann/json), [bcm2835](https://www.airspayce.com/mikem/bcm2835), [WiringPi](http://wiringpi.com/) for this project. In this project I am getting weather data of Seattle, WA from an online server
 [openweathermap](https://api.openweathermap.org/) and using the current maximum temperature of Seattle, I am turning this information into visual responses using the raspberry pi. These visual responses are 8 LEDs that brighten while the stepper
